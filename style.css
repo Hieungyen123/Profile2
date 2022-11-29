@@ -259,8 +259,10 @@ img {
     width: 100%;
 }
 .contact-item {
+    display: flex;
     margin: 20px;
     list-style: none;
+    justify-content: space-around;
 }
 .contact-item-li {
     margin-bottom: 20px;
