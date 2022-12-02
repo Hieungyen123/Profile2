@@ -18,6 +18,7 @@
 }
 /* ============== */
 :root {
+    --color-bg: #121212;
     --smooh: all.3s ease-in;
     --box-shadow-30: 0px 16px 30px rgba(0, 0, 0, 0.25);
     --color-paragraph: #D6D6D6;
@@ -50,7 +51,8 @@ html {
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #121212;
+    /* background-color: #262424; */
+    background-color: var(--color-bg);
 }
 
 img {
@@ -70,16 +72,27 @@ img {
     display: flex;
     justify-content: center;
     margin-right: 5px;
-    
+    height: 900px;
+}
+
+@media (max-width: 1190px) {
+    .body-all {
+        height: 1200px;
+    }
+   
 }
 /* === user === */
 
+@media (min-width: 1190px) {
+   .user {
+    margin-bottom: 50px;
+   }
+}
 .user {
-    
     position: sticky;
     top:0 ;
     width: 300px;
-    height: 800px;
+    height: 700px;
     background-color: var(--color-surface-1);
     padding: 15px;
     margin-right: 2%;
@@ -114,42 +127,61 @@ img {
     margin: 2rem 0;
     height: 1.5px;
     width: 100%;
+    transition: var(--smooh);
+    
 }
-@media (min-width: 1190px) {
-    .img-name  {
-        margin-bottom: 10%;
-    }
-}
+
+
+
+
 @media (max-width: 1190px) {
 
+    @keyframes sildetop {
+        from {
+            transform: translateX(-50%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
     .user {
         position:  relative; 
-        width: 90%;
+        width: 100%;
         height: 450px;
-        margin-bottom: 5%;
+        margin-bottom: 4%;
         transition: var(--tran-05);
+        margin-left: -3%;
        
     }
     .user.close {
         position:  relative; 
-        width: 90%;
-        height: 280px;
-        margin-bottom: 5%;
+        width: 100%;
+        height: 230px;
+        
         transition: var(--tran-05);
+        
+        
+    }
+    .user.close .strikethrough {
+        display: none;
         
     }
     
     .user.close .li-contact {
         opacity: 0;
-        transition: 0.6s;
-        transform: translateX(-100px);
+        /* transition: 0.6s; */
+        /* transform: translateX(-100px); */
         display: none;
+        animation: sildetop ease .9s;
+        
     }
 
     .user .li-contact {
-        transition: var(--tran-06);
+        /* transition: var(--tran-06); */
+        animation: sildetop ease .9s;
     }
     
+   
     
     .body-all {
         
@@ -159,10 +191,10 @@ img {
         
     }
     .img-name {
-        padding: 10px;
+        padding: 0;
         vertical-align: middle;
         text-align: center;
-        
+        margin-left: 3%;
         display: flex;
         color: white;
         
@@ -219,18 +251,17 @@ img {
         display: flex;
         margin: 20px;
         list-style: none;
-        justify-content: space-around;
+        justify-content: start;
+    }
+    .li-contact {
+        width: 50%;
+        margin-left: 7%;
     }
 
     .body-all {
         margin-left: 5%;
     }
-    .email {
-        width: 150px;
-        text-overflow: none;
-        white-space: none;
-        overflow: none;
-    }
+    
     
     
 }
@@ -295,10 +326,11 @@ img {
     color: var(--color-paragraph);
     font-size: 0.875rem;
     font-weight: 300;
-    
-    
 }
-
+.dec .dec-user-contact {
+    color: #e5d085;
+    font-weight: 400;
+}
 #icon {
     padding: 15px 15px;
     text-align: center;
@@ -321,7 +353,7 @@ img {
 /* === content === */
 .content {
     width: 70%;
-    height: auto;
+    height: 850px;
     background-color: var(--color-surface-1);
     border-radius: 25px;
     border: 0.1px var(--color-border) solid;
@@ -420,7 +452,8 @@ img {
 
 @media (max-width: 1190px) {
     .content {
-        width: 90%;
+        width: 100%;
+        margin-left: -3%;
     }
    
 }
@@ -428,8 +461,7 @@ img {
 
 .dec-content {
     margin-top: 20px;
-    max-width: 90%;
-    
+    max-width: 98%;
     font-weight: 300;
     line-height: 1.65;
 }
@@ -469,7 +501,7 @@ img {
 }
 .have-item {
     
-    margin: 15px;
+    margin: 17px;
     display: flex;
     width: 45%;
     height: 120px;
@@ -498,7 +530,7 @@ img {
 .have-dec h3 {
     padding-top: 2px;
     padding-bottom: 2px;
-    color: var(--color-heading);
+    color: var(--color-accent);
     font-weight: 400;
 
 }
@@ -529,14 +561,22 @@ img {
     .skill {
         /* position: relative; */
         
-        border-radius: 25px;
-        border: 1px solid var(--color-accent);
+        border-radius: 30px;
+        border: 3px solid #2a2a2b;
         width: 90%;
     }
     
    
 }
-
+.skill {
+    /* position: relative; */
+    
+    border-radius: 30px;
+    border: 3px solid #2a2a2b;
+    width: 90%;
+    
+    
+}
 
 
 
@@ -596,10 +636,10 @@ img {
     margin-top: 20px;
     position: relative;
     margin-bottom: 40px;
-   
-    
 }
-
+/* .Name-Skils-aboute {
+    color: var(--color-accent);
+} */
 
 
 
@@ -610,6 +650,7 @@ img {
 
 .dark-mode {
     margin: 50px;
+    margin-top: 20px;
     display: flex;
     width: 86%;
     justify-content: flex-end;
