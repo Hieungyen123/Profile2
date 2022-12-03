@@ -2,7 +2,7 @@ const body = document.querySelector('body')
 const check = document.querySelector('#checkbox')
 const user = document.querySelector('.user')
 const show = document.querySelector('.btn')
-console.log(user)
+
 
 check.addEventListener('change', function(){
   body.classList.toggle('dark')
@@ -11,7 +11,8 @@ check.addEventListener('change', function(){
 
 const $  = document.querySelector.bind(document);
 const $$  = document.querySelectorAll.bind(document);
-
+const bodyall = $('.body-all');
+console.log(bodyall)
 
 const tabs = $$('.tab-item');
 const panes = $$('.tab-pane');
@@ -42,8 +43,11 @@ tabs.forEach((tab,index) => {
     }
 });
 
+
 show.addEventListener("click", () => {
   user.classList.toggle("close");
+  bodyall.classList.toggle("hi")
+
 })
 
 
